@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>PagerDuty University API Workshop Utility</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css" rel="stylesheet">
+		<link href="css/PDtool.css" rel="stylesheet">
+	</head>
+	<body>
+	    <nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">PagerDuty University API Workshop Utility</a>
+	        </div>
+	
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li><a class="tab" id="auth-button" href="#">Authentication</a></li>
+	          </ul>
+	          <ul class="nav navbar-nav navbar-right">
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
+
+		<div id="content" class="container-fluid">
+			<div class="detail" id="auth">
+				<h2 style="text-align: center;">Authentication</h2>
+				<div id="pd-auth-button-container">
+					<a id="pd-auth-button" class="pd-button">
+						Authorize PagerDuty
+					</a>
+				</div>
+			</div>
+			<div class="detail" id="index">
+				<h2>Welcome!</h2>
+				<p id="welcome">
+					<div id="user-wrapper">
+						<div id="pic">
+							<img id="user_avatar" src="" />
+						</div>
+						<div id="bio">
+							<div class="bio-item" id="user_name"></div>
+							<div class="bio-item" id="user_email"></div>
+							<div class="bio-item" id="user_subdomain"></div>
+						</div>
+						<div id="workshop-content">
+							<p>
+								Thank you for attending the <span style="font-weight:bold;">PagerDuty University API 201</span> Course! In order to 
+								participate today you'll need some data in your PagerDuty sandbox account to play with.
+								Look at the information above and make sure you're connected to the right subdomain. If you're not go up to the Authentication 
+								menu and disconnect PagerDuty and then go through the Authentication process again making sure that you selected the correct
+								PagerDuty subdomain.
+							</p>
+							<p>
+								When ready, click on the button below to load some test data into your account.
+							</p>
+						</div>	
+					</div>
+					<div id="run-button-container">
+						<a id="run-button" class="pd-button">
+							Create Workshop Test Data
+						</a>
+					</div>
+					<div id="run-result"></div>	
+					<div id="delete-testdata-container">
+						<a onclick="confirmDeleteTestData()" href="#">Delete Workshop Test Data</a>
+					</div>
+				</p>
+			</div>
+		</div>
+		<div id="busy" style="display:none;">
+			<img class="spinner" src="img/spinner.gif">
+			<div class="progress">
+				<div id="progressbar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+					0%
+				</div>
+			</div>
+		</div>
+		<script src="js/pdjs.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/auth.js"></script>
+		<script src="js/pd-api-workshop.js"></script>
+	</body>
+</html>
