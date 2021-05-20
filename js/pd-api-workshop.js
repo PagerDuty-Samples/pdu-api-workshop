@@ -79,7 +79,8 @@ const initLogoutButton = function() {
     // logout of pagerduty
     authButton.onclick = () => {
         localStorage.removeItem('pd-token');
-        location.reload();
+        // location.reload();
+		showTab("auth");
     }
 }
 
