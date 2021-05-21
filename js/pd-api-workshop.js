@@ -4,17 +4,6 @@ const navMap = {
     "auth-button": "auth"
 };
 
-const userTableColumnsMap = {
-    "name": "Name",
-    "email": "Login/Email",
-    "time_zone": "Time Zone",
-    "color": "Color",
-    "role": "PD Role",
-    "job_title": "Job Title",
-    "avatar_url": "Avatar URL",
-    "description": "Description"
-};
-
 const TEAM_NAME = "PDU Workshop Team";
 // create a list of teams
 const NUMBER_OF_TEAMS = 55;
@@ -80,7 +69,8 @@ const initLogoutButton = function() {
     authButton.onclick = () => {
         localStorage.removeItem('pd-token');
         // location.reload();
-		showTab("auth");
+		showTab("index");
+		authCheckingPoll();
     }
 }
 
